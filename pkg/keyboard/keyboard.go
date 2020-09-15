@@ -4,12 +4,14 @@ import (
 	"gobot.io/x/gobot/platforms/keyboard"
 )
 
-type Keyboard struct {
+// MyKeyboard is struct for my own keyboard
+type MyKeyboard struct {
 	KeyDriver *keyboard.Driver
 }
 
-func NewKeyboard() *Keyboard {
-	k := new(Keyboard)
+// NewMyKeyboard is contstructor for my own keyboard
+func NewMyKeyboard() *MyKeyboard {
+	k := new(MyKeyboard)
 	k.KeyDriver = keyboard.NewDriver()
 	return k
 }
