@@ -6,14 +6,13 @@ import (
 	"log"
 	"os"
 
-	myremo "remo-key/pkg/remo"
+	mykeyboard "github.com/jedipunkz/mygobot/pkg/keyboard"
+	myremo "github.com/jedipunkz/myremo/pkg/remo"
 
 	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 	"gobot.io/x/gobot"
 	"gobot.io/x/gobot/platforms/keyboard"
-
-	mykeyboard "remo-key/pkg/keyboard"
 )
 
 const (
