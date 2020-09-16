@@ -1,0 +1,33 @@
+# copy to ~/.remo-key.yaml and write as below
+token: ****** # natureremo token
+keys:
+  0:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  1:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  2:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  3:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  4:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  5:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  6:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  7:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  8:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  9:
+    appliance: ジェダイの扇風機
+    signal: on.off
