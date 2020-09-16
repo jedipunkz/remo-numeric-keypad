@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
 	"os"
 
 	mykeyboard "github.com/jedipunkz/mygobot/pkg/keyboard"
@@ -20,11 +19,16 @@ const (
 )
 
 type keys struct {
+	key0 aplSig
 	key1 aplSig
 	key2 aplSig
 	key3 aplSig
 	key4 aplSig
 	key5 aplSig
+	key6 aplSig
+	key7 aplSig
+	key8 aplSig
+	key9 aplSig
 }
 
 type aplSig struct {
@@ -34,16 +38,26 @@ type aplSig struct {
 
 func newKeys() *keys {
 	k := new(keys)
-	k.key1.apl = viper.GetString("key1.apl")
-	k.key2.apl = viper.GetString("key2.apl")
-	k.key3.apl = viper.GetString("key3.apl")
-	k.key4.apl = viper.GetString("key4.apl")
-	k.key5.apl = viper.GetString("key5.apl")
-	k.key1.sig = viper.GetString("key1.sig")
-	k.key2.sig = viper.GetString("key2.sig")
-	k.key3.sig = viper.GetString("key3.sig")
-	k.key4.sig = viper.GetString("key4.sig")
-	k.key5.sig = viper.GetString("key5.sig")
+	k.key0.apl = viper.GetString("keys.0.appliance")
+	k.key1.apl = viper.GetString("keys.1.appliance")
+	k.key2.apl = viper.GetString("keys.2.appliance")
+	k.key3.apl = viper.GetString("keys.3.appliance")
+	k.key4.apl = viper.GetString("keys.4.appliance")
+	k.key5.apl = viper.GetString("keys.5.appliance")
+	k.key6.apl = viper.GetString("keys.6.appliance")
+	k.key7.apl = viper.GetString("keys.7.appliance")
+	k.key8.apl = viper.GetString("keys.8.appliance")
+	k.key9.apl = viper.GetString("keys.9.appliance")
+	k.key0.sig = viper.GetString("keys.0.signal")
+	k.key1.sig = viper.GetString("keys.1.signal")
+	k.key2.sig = viper.GetString("keys.2.signal")
+	k.key3.sig = viper.GetString("keys.3.signal")
+	k.key4.sig = viper.GetString("keys.4.signal")
+	k.key5.sig = viper.GetString("keys.5.signal")
+	k.key6.sig = viper.GetString("keys.6.signal")
+	k.key7.sig = viper.GetString("keys.7.signal")
+	k.key8.sig = viper.GetString("keys.8.signal")
+	k.key9.sig = viper.GetString("keys.9.signal")
 	return k
 }
 
@@ -66,20 +80,37 @@ func init() {
 func main() {
 	token := viper.GetString("token")
 	r := myremo.NewRemo(token)
+
 	mykeyboard := mykeyboard.NewMyKeyboard()
 	k := newKeys()
+
 	ctx := context.Background()
 
 	work := func() {
 		mykeyboard.KeyDriver.On(keyboard.Key, func(data interface{}) {
-			key := data.(keyboard.KeyEvent)
+			pushedKey := data.(keyboard.KeyEvent)
 
-			if key.Key == keyboard.One {
-				fmt.Println(k.key1.apl)
-				fmt.Println(k.key1.sig)
-				if err := r.SendSignalByAplSig(k.key1.apl, k.key1.sig, ctx); err != nil {
-					log.Fatal(err)
-				}
+			switch pushedKey.Key {
+			case keyboard.Zero:
+				r.SendSignalByAplSig(k.key0.apl, k.key0.sig, ctx)
+			case keyboard.One:
+				r.SendSignalByAplSig(k.key1.apl, k.key1.sig, ctx)
+			case keyboard.Two:
+				r.SendSignalByAplSig(k.key2.apl, k.key2.sig, ctx)
+			case keyboard.Three:
+				r.SendSignalByAplSig(k.key3.apl, k.key3.sig, ctx)
+			case keyboard.Four:
+				r.SendSignalByAplSig(k.key4.apl, k.key4.sig, ctx)
+			case keyboard.Five:
+				r.SendSignalByAplSig(k.key5.apl, k.key5.sig, ctx)
+			case keyboard.Six:
+				r.SendSignalByAplSig(k.key6.apl, k.key6.sig, ctx)
+			case keyboard.Seven:
+				r.SendSignalByAplSig(k.key7.apl, k.key7.sig, ctx)
+			case keyboard.Eight:
+				r.SendSignalByAplSig(k.key8.apl, k.key8.sig, ctx)
+			case keyboard.Nine:
+				r.SendSignalByAplSig(k.key9.apl, k.key9.sig, ctx)
 			}
 		})
 	}
