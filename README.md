@@ -4,7 +4,7 @@
 
 remo-numeric-keypad enable you to controll Home Appliances and Devices via Nature Remo with the Numeric KeyPad.
 
-<img src="https://raw.githubusercontent.com/jedipunkz/remo-numeric-keypad/master/pix/numeric_key_with_raspberyy_pi.jpg">
+<img src="https://github.com/jedipunkz/remo-numeric-keypad/blob/master/pix/numeric_key_with_raspberyy_pi.jpg">
 
 ## Pre-Requirement(s)
 
