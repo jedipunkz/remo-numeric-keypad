@@ -1,4 +1,4 @@
-module remo-key
+module remo-numeric-keypad
 
 go 1.15
 

@@ -4,7 +4,7 @@
 *.dll
 *.so
 *.dylib
-remo-key
+remo-numeric-keypad
 
 # Test binary, build with `go test -c`
 *.test
