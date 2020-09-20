@@ -1,0 +1,45 @@
+token: ***** # nature remo api token
+keys:
+  0:
+    appliance: ジェダイの照明
+    signal: "off"
+  1:
+    appliance: ジェダイの照明
+    signal: "1"
+  2:
+    appliance: ジェダイの照明
+    signal: "2"
+  3:
+    appliance: ジェダイの照明
+    signal: "on"
+  4:
+    appliance: ジェダイの扇風機
+    signal: on.off
+  5:
+    appliance: ジェダイの扇風機
+    signal: "fast"
+  6:
+    appliance: ジェダイの扇風機
+    signal: "slow"
+  7:
+    appliance: ジェダイのエアコン
+    signal: "24度"
+  8:
+    appliance: ジェダイのエアコン
+    signal: "25度"
+  9:
+    appliance: ジェダイのエアコン
+    signal: "26度"
+  plus:
+    appliance: ジェダイのエアコン
+    signal: "オフ"
+  divide:
+    appliance: ジェダイのエアコン
+    signal: "オフ"
+  asterisk:
+    appliance: ジェダイのエアコン
+    signal: "オフ"
+  minus:
+    appliance: ジェダイのエアコン
+    signal: "オフ"
+

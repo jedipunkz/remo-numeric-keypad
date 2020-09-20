@@ -16,7 +16,9 @@ remo-numeric-keypad enable you to controll Home Appliances and Devices via Natur
 $ go get github.com/jedipunkz/remo-numeric-keypad.git
 ```
 
-## Setup `$HOME/.remo-key.yaml` file. This repository includes example yaml file. see `example_yamls` dir.
+## Setup `$HOME/.remo-key.yaml` file.
+
+This repository includes example yaml file. see `example_yamls` dir.
 
 ## Boot Process
 
