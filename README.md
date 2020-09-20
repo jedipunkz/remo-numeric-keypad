@@ -8,7 +8,7 @@ remo-numeric-keypad enable you to controll Home Appliances and Devices via Natur
 
 ## Pre-Requirement(s)
 
-- [SDL](https://www.libsdl.org/)
+- gobot.io with My adding symbol keys PR: https://github.com/hybridgroup/gobot/pull/767
 
 ## Installation
 
