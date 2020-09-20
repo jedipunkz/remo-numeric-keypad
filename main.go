@@ -19,16 +19,22 @@ const (
 )
 
 type keys struct {
-	key0 aplSig
-	key1 aplSig
-	key2 aplSig
-	key3 aplSig
-	key4 aplSig
-	key5 aplSig
-	key6 aplSig
-	key7 aplSig
-	key8 aplSig
-	key9 aplSig
+	key0     aplSig
+	key1     aplSig
+	key2     aplSig
+	key3     aplSig
+	key4     aplSig
+	key5     aplSig
+	key6     aplSig
+	key7     aplSig
+	key8     aplSig
+	key9     aplSig
+	esc      aplSig
+	minus    aplSig
+	asterisk aplSig
+	plus     aplSig
+	divide   aplSig
+	dot      aplSig
 }
 
 type aplSig struct {
@@ -48,6 +54,12 @@ func newKeys() *keys {
 	k.key7.apl = viper.GetString("keys.7.appliance")
 	k.key8.apl = viper.GetString("keys.8.appliance")
 	k.key9.apl = viper.GetString("keys.9.appliance")
+	k.esc.apl = viper.GetString("keys.esc.appliance")
+	k.minus.apl = viper.GetString("keys.minus.appliance")
+	k.asterisk.apl = viper.GetString("keys.asterisk.appliance")
+	k.plus.apl = viper.GetString("keys.plus.appliance")
+	k.divide.apl = viper.GetString("keys.divide.appliance")
+	k.dot.apl = viper.GetString("keys.dot.appliance")
 	k.key0.sig = viper.GetString("keys.0.signal")
 	k.key1.sig = viper.GetString("keys.1.signal")
 	k.key2.sig = viper.GetString("keys.2.signal")
@@ -58,6 +70,12 @@ func newKeys() *keys {
 	k.key7.sig = viper.GetString("keys.7.signal")
 	k.key8.sig = viper.GetString("keys.8.signal")
 	k.key9.sig = viper.GetString("keys.9.signal")
+	k.esc.sig = viper.GetString("keys.esc.signal")
+	k.minus.sig = viper.GetString("keys.minus.signal")
+	k.asterisk.sig = viper.GetString("keys.asterisk.signal")
+	k.plus.sig = viper.GetString("keys.plus.signal")
+	k.divide.sig = viper.GetString("keys.divide.signal")
+	k.dot.sig = viper.GetString("keys.dot.signal")
 	return k
 }
 
@@ -111,6 +129,18 @@ func main() {
 				r.SendSignalByAplSig(k.key8.apl, k.key8.sig, ctx)
 			case keyboard.Nine:
 				r.SendSignalByAplSig(k.key9.apl, k.key9.sig, ctx)
+			case keyboard.Escape:
+				r.SendSignalByAplSig(k.esc.apl, k.esc.sig, ctx)
+			case keyboard.Minus:
+				r.SendSignalByAplSig(k.minus.apl, k.minus.sig, ctx)
+			case keyboard.Asterisk:
+				r.SendSignalByAplSig(k.asterisk.apl, k.asterisk.sig, ctx)
+			case keyboard.Plus:
+				r.SendSignalByAplSig(k.plus.apl, k.plus.sig, ctx)
+			case keyboard.Divide:
+				r.SendSignalByAplSig(k.divide.apl, k.divide.sig, ctx)
+			case keyboard.Dot:
+				r.SendSignalByAplSig(k.dot.apl, k.dot.sig, ctx)
 			}
 		})
 	}
