@@ -3,11 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 	"os"
 
 	mykeyboard "github.com/jedipunkz/mygobot/pkg/keyboard"
 	myremo "github.com/jedipunkz/myremo/pkg/remo"
 
+	"github.com/mitchellh/cli"
 	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 	"gobot.io/x/gobot"
@@ -16,6 +18,7 @@ import (
 
 const (
 	confFile = ".remo-key"
+	version  = "0.0.1"
 )
 
 type keys struct {
@@ -79,6 +82,26 @@ func newKeys() *keys {
 	return k
 }
 
+type serverCommand struct{}
+
+func (c *serverCommand) Help() string {
+	return "Usage: remo-numpad server"
+}
+
+func (c *serverCommand) Synopsis() string {
+	return "server boot"
+}
+
+type scanCommand struct{}
+
+func (c *scanCommand) Help() string {
+	return "Usage: remo-numpad scan"
+}
+
+func (c *scanCommand) Synopsis() string {
+	return "scan your key inputs"
+}
+
 func init() {
 	home, err := homedir.Dir()
 	if err != nil {
@@ -96,6 +119,46 @@ func init() {
 }
 
 func main() {
+	c := cli.NewCLI("remo-numpad", version)
+
+	c.Args = os.Args[1:]
+	c.Commands = map[string]cli.CommandFactory{
+		"server": func() (cli.Command, error) {
+			return &serverCommand{}, nil
+		},
+		"scan": func() (cli.Command, error) {
+			return &scanCommand{}, nil
+		},
+	}
+
+	exitStatus, err := c.Run()
+	if err != nil {
+		log.Fatal(err)
+	}
+	os.Exit(exitStatus)
+}
+
+func (c *scanCommand) Run(args []string) int {
+	mykeyboard := mykeyboard.NewMyKeyboard()
+
+	work := func() {
+		mykeyboard.KeyDriver.On(keyboard.Key, func(data interface{}) {
+			pushedKey := data.(keyboard.KeyEvent)
+			fmt.Println("Your Key: ", pushedKey, " ", pushedKey.Char, " ", pushedKey.Bytes)
+		})
+	}
+
+	robot := gobot.NewRobot("keyboardbot",
+		[]gobot.Connection{},
+		[]gobot.Device{mykeyboard.KeyDriver},
+		work,
+	)
+
+	robot.Start()
+	return 0
+}
+
+func (c *serverCommand) Run(args []string) int {
 	token := viper.GetString("token")
 	r := myremo.NewRemo(token)
 
@@ -152,4 +215,5 @@ func main() {
 	)
 
 	robot.Start()
+	return 0
 }
