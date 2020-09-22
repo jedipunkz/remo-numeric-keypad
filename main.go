@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	confFile = ".remo-key"
+	confFile = ".remo-numpad"
 	version  = "0.0.1"
 )
 
