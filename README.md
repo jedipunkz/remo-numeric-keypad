@@ -16,7 +16,7 @@ remo-numpad enable you to controll Home Appliances and Devices via Nature Remo w
 $ go get github.com/jedipunkz/remo-numpad.git
 ```
 
-## Setup `$HOME/.remo-key.yaml` file.
+## Setup `$HOME/.remo-numpad.yaml` file.
 
 This repository includes example yaml file. see `example_yamls` dir.
 
