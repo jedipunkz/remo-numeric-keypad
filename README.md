@@ -1,8 +1,8 @@
-# remo-numeric-keypad
+# remo-numpad
 
 ## Description
 
-remo-numeric-keypad enable you to controll Home Appliances and Devices via Nature Remo with the Numeric KeyPad.
+remo-numpad enable you to controll Home Appliances and Devices via Nature Remo with the Numeric KeyPad.
 
 <img src="https://github.com/jedipunkz/remo-numeric-keypad/blob/master/pix/numeric_key_with_raspberyy_pi.jpg" width=512>
 
