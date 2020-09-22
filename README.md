@@ -23,5 +23,11 @@ This repository includes example yaml file. see `example_yamls` dir.
 ## Boot Process
 
 ```bash
-$ remo-numeric-key
+$ remo-numpad server
+```
+
+## Scan Pressed Key and Print Key Char, Key Code
+
+```bash
+$ remo-numpad scan # then if you press any key, key character and code will be printed.
 ```
