@@ -9,5 +9,5 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/spf13/viper v1.7.1
 	github.com/tenntenn/natureremo v0.0.1 // indirect
-	gobot.io/x/gobot v1.14.0
+	gobot.io/x/gobot v1.14.1-0.20201029191728-4a30f5b69333
 )
