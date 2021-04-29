@@ -1,13 +1,13 @@
 module remo-numpad
 
-go 1.15
+go 1.16
 
 require (
 	github.com/jedipunkz/mygobot v0.0.0-20200915110256-9a2b95ebf3b6
-	github.com/jedipunkz/myremo v0.0.0-20200915110513-ad76644b8736
-	github.com/mitchellh/cli v1.1.1
+	github.com/jedipunkz/myremo v0.0.0-20210207075010-3133c0ea3053
+	github.com/mitchellh/cli v1.1.2
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/spf13/viper v1.7.1
 	github.com/tenntenn/natureremo v0.0.1 // indirect
-	gobot.io/x/gobot v1.14.1-0.20201029191728-4a30f5b69333
+	gobot.io/x/gobot v1.15.0
 )
