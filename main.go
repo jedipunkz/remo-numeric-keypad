@@ -107,7 +107,7 @@ func main() {
 
 	exitStatus, err := c.Run()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	os.Exit(exitStatus)
 }
