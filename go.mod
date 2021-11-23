@@ -1,4 +1,4 @@
-module remonumpad
+module remo-numpad
 
 go 1.17
 
