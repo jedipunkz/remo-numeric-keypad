@@ -1,4 +1,4 @@
-module remo-numpad
+module github.com/jedipunkz/remo-numpad
 
 go 1.17
 
