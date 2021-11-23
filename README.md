@@ -13,7 +13,7 @@ remo-numpad enable you to controll Home Appliances and Devices via Nature Remo w
 ## Installation
 
 ```bash
-$ go get github.com/jedipunkz/remo-numpad.git
+$ go install github.com/jedipunkz/remo-numpad@latest
 ```
 
 ## Setup `$HOME/.remo-numpad.yaml` file.
