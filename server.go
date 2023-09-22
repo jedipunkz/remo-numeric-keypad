@@ -36,37 +36,37 @@ func (c *serverCommand) Run(args []string) int {
 
 			switch pushedKey.Key {
 			case keyboard.Zero:
-				r.SendSignalByAplSig(k.key0.apl, k.key0.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["0"].Appliance, k.Keys["0"].Signal, ctx)
 			case keyboard.One:
-				r.SendSignalByAplSig(k.key1.apl, k.key1.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["1"].Appliance, k.Keys["1"].Signal, ctx)
 			case keyboard.Two:
-				r.SendSignalByAplSig(k.key2.apl, k.key2.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["2"].Appliance, k.Keys["2"].Signal, ctx)
 			case keyboard.Three:
-				r.SendSignalByAplSig(k.key3.apl, k.key3.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["3"].Appliance, k.Keys["3"].Signal, ctx)
 			case keyboard.Four:
-				r.SendSignalByAplSig(k.key4.apl, k.key4.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["4"].Appliance, k.Keys["4"].Signal, ctx)
 			case keyboard.Five:
-				r.SendSignalByAplSig(k.key5.apl, k.key5.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["5"].Appliance, k.Keys["5"].Signal, ctx)
 			case keyboard.Six:
-				r.SendSignalByAplSig(k.key6.apl, k.key6.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["6"].Appliance, k.Keys["6"].Signal, ctx)
 			case keyboard.Seven:
-				r.SendSignalByAplSig(k.key7.apl, k.key7.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["7"].Appliance, k.Keys["7"].Signal, ctx)
 			case keyboard.Eight:
-				r.SendSignalByAplSig(k.key8.apl, k.key8.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["8"].Appliance, k.Keys["8"].Signal, ctx)
 			case keyboard.Nine:
-				r.SendSignalByAplSig(k.key9.apl, k.key9.sig, ctx)
+				r.SendSignalByAplSig(k.Keys["9"].Appliance, k.Keys["9"].Signal, ctx)
 			case keyboard.Escape:
-				r.SendSignalByAplSig(k.esc.apl, k.esc.sig, ctx)
+				r.SendSignalByAplSig(k.Esc.Appliance, k.Esc.Signal, ctx)
 			case keyboard.Hyphen:
-				r.SendSignalByAplSig(k.hyphen.apl, k.hyphen.sig, ctx)
+				r.SendSignalByAplSig(k.Hyphen.Appliance, k.Hyphen.Signal, ctx)
 			case keyboard.Asterisk:
-				r.SendSignalByAplSig(k.asterisk.apl, k.asterisk.sig, ctx)
+				r.SendSignalByAplSig(k.Asterisk.Appliance, k.Asterisk.Signal, ctx)
 			case keyboard.Plus:
-				r.SendSignalByAplSig(k.plus.apl, k.plus.sig, ctx)
+				r.SendSignalByAplSig(k.Plus.Appliance, k.Plus.Signal, ctx)
 			case keyboard.Slash:
-				r.SendSignalByAplSig(k.slash.apl, k.slash.sig, ctx)
+				r.SendSignalByAplSig(k.Slash.Appliance, k.Slash.Signal, ctx)
 			case keyboard.Dot:
-				r.SendSignalByAplSig(k.dot.apl, k.dot.sig, ctx)
+				r.SendSignalByAplSig(k.Dot.Appliance, k.Dot.Signal, ctx)
 			}
 		})
 	}
